@@ -25,7 +25,7 @@ const getaccount = (username) =>
 
   const data = await getaccount(username);
   if (data["message"] == "Not Found") {
-    console.log(chalk.red("[+] ") + `Data/Username Not`);
+    console.log(chalk.red("[+] ") + `Data/Username Not Valid`);
   } else {
     console.log("");
     console.log(chalk.green("[+] ") + `Account : ${data["login"]}`);
