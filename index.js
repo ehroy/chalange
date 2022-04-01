@@ -22,10 +22,15 @@ const getaccount = (username) =>
   const username = readline.question(
     chalk.green("[?] ") + "Input Your Username Target : "
   );
+
   const data = await getaccount(username);
-  console.log("");
-  console.log(chalk.green("[+] ") + `Account : ${data["login"]}`);
-  console.log(chalk.green("[+] ") + `Account Name : ${data["name"]}`);
-  console.log(chalk.green("[+] ") + `Following  : ${data["following"]}`);
-  console.log(chalk.green("[+] ") + `Followers : ${data["followers"]}`);
+  if (data["message"] == "Not Found") {
+    console.log(chalk.red("[+] ") + `Data/Username Not`);
+  } else {
+    console.log("");
+    console.log(chalk.green("[+] ") + `Account : ${data["login"]}`);
+    console.log(chalk.green("[+] ") + `Account Name : ${data["name"]}`);
+    console.log(chalk.green("[+] ") + `Following  : ${data["following"]}`);
+    console.log(chalk.green("[+] ") + `Followers : ${data["followers"]}`);
+  }
 })();
